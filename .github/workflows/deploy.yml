@@ -10,6 +10,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Check AWS CLI
+        run: |
+          aws --version
       - name: Run a multi-line script
         run: |
           echo "Our first github Action"

@@ -19,5 +19,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
           AWS_REGION: eu-central-1
+          WEBSITE_BUCKET_NAME: ${{ secrets.WEBSITE_BUCKET_NAME }}
         run: |
-          aws s3 cp index.html s3://cgn-aws-22-2-neuefische-website-1234/index.html --acl public-read
+          aws s3 cp index.html s3://$WEBSITE_BUCKET_NAME/index.html --acl public-read
